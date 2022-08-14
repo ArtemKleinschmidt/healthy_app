@@ -48,3 +48,6 @@ app.*.map.json
 
 # Generated code
 /**/lib/_generated/
+
+# Package-level pubspec files
+/**/pubspec.lock
