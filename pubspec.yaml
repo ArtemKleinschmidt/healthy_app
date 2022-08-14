@@ -32,11 +32,11 @@ dependencies:
 
 # Internal app packages
   weight_domain:
-    path: ./weight_domain
+    path: ./app_packages/weight_domain
   weight_data:
-    path: ./weight_data
+    path: ./app_packages/weight_data
   common_domain:
-    path: ./common_domain
+    path: ./app_packages/common_domain
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

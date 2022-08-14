@@ -53,7 +53,7 @@ packages:
   common_domain:
     dependency: "direct main"
     description:
-      path: common_domain
+      path: "app_packages/common_domain"
       relative: true
     source: path
     version: "1.0.0"
@@ -215,14 +215,14 @@ packages:
   weight_data:
     dependency: "direct main"
     description:
-      path: weight_data
+      path: "app_packages/weight_data"
       relative: true
     source: path
     version: "1.0.0"
   weight_domain:
     dependency: "direct main"
     description:
-      path: weight_domain
+      path: "app_packages/weight_domain"
       relative: true
     source: path
     version: "1.0.0"
