@@ -6,14 +6,14 @@ import '../common/di/di.dart';
 import '../common/presentation/ui_tools.dart';
 import 'screen_builder/home_screen_builder.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyHomeScreen extends StatefulWidget {
+  const MyHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomeScreen> createState() => _MyHomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomeScreenState extends State<MyHomeScreen> {
   final homeScreenBuilder = HomeScreenBuilder();
   var _index = 0;
 

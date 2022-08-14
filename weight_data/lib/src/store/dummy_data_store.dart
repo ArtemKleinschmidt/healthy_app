@@ -1,6 +1,6 @@
-import 'package:healthy_app/features/daily/data/store/weight_data_store.dart';
+import 'package:weight_data/src/store/weight_data_store.dart';
 
-import '../../../../dummy_data/dummy_data.dart';
+import '../dummy_data/dummy_data.dart';
 
 class DummyDataStore implements WeightDataStore {
   @override

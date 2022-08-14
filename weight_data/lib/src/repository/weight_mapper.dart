@@ -1,9 +1,8 @@
 import 'dart:convert';
 
-import 'package:healthy_app/features/daily/data/model/weight_model.dart';
-
-import '../../../../dummy_data/dummy_data.dart';
-import '../../domain/weight.dart';
+import 'package:weight_domain/weight_domain.dart';
+import '../dummy_data/dummy_data.dart';
+import '../model/weight_model.dart';
 
 List<Weight> map(String weight) {
   final weightModelList = WeightListModel.fromJson(jsonDecode(dummyWeightData));

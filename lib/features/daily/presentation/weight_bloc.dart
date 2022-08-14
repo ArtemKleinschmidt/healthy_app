@@ -1,13 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:common_domain/common_domain.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:healthy_app/common/domain/result.dart';
-
-import '../../../common/domain/use_case.dart';
-import '../domain/get_weight.dart';
-import '../domain/weight.dart';
+import 'package:weight_domain/weight_domain.dart';
 
 part 'weight_event.dart';
 part 'weight_state.dart';

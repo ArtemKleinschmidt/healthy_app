@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-part '../../../../_generated/features/daily/data/model/weight_model.g.dart';
+part '../../_generated/src/model/weight_model.g.dart';
 
 @JsonSerializable()
 class WeightListModel {
