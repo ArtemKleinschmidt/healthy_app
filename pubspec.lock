@@ -57,6 +57,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  common_presentation:
+    dependency: "direct main"
+    description:
+      path: "app_packages/common_presentation"
+      relative: true
+    source: path
+    version: "0.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -64,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  daily_presentation:
+    dependency: "direct main"
+    description:
+      path: "app_packages/daily_presentation"
+      relative: true
+    source: path
+    version: "0.0.1"
   equatable:
     dependency: "direct main"
     description:
@@ -228,4 +242,4 @@ packages:
     version: "1.0.0"
 sdks:
   dart: ">=2.17.6 <3.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=1.17.0"

@@ -1,8 +1,8 @@
+import 'package:common_presentation/common_presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:healthy_app/features/daily/presentation/weight_bloc.dart';
 
-import '../../../home/fab_click_listener.dart';
+import 'weight_bloc.dart';
 
 class DailyScreen extends StatelessWidget implements FabClickListener {
   DailyScreen({Key? key}) : super(key: key);

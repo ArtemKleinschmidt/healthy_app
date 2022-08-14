@@ -1,9 +1,9 @@
+import 'package:common_presentation/common_presentation.dart';
+import 'package:daily_presentation/daily_presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:healthy_app/features/daily/presentation/weight_bloc.dart';
-import 'package:healthy_app/home/fab_click_listener.dart';
+import 'package:common_presentation/src/fab_click_listener.dart';
 import '../common/di/di.dart';
-import '../common/presentation/ui_tools.dart';
 import 'screen_builder/home_screen_builder.dart';
 
 class MyHomeScreen extends StatefulWidget {

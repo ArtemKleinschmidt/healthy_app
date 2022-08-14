@@ -1,7 +1,7 @@
+import 'package:daily_presentation/daily_presentation.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/charts/presentation/charts_screen.dart';
-import '../../features/daily/presentation/daily_screen.dart';
 import '../../features/info/presentation/info_screen.dart';
 import '../../features/more/presentation/more_screen.dart';
 import 'home_body_builder.dart';
