@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   equatable: ^2.0.3
   flutter_bloc: ^8.0.1
+  carousel_slider: ^4.1.1
   weight_domain:
     path: ../weight_domain
   common_domain:

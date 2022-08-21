@@ -1,6 +1,9 @@
 import 'package:common_presentation/common_presentation.dart';
+import 'package:daily_presentation/src/daily_screen/weight_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weight_domain/weight_domain.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import 'weight_bloc.dart';
 
@@ -25,19 +28,28 @@ class DailyScreen extends StatelessWidget implements FabClickListener {
     return BlocBuilder<WeightBloc, WeightState>(builder: (context, state) {
       if (state is! WeightSuccess) return Container();
 
-      WeightSuccess weightSuccess = state;
-      // return widget here based on BlocA's state
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ...weightSuccess.weightList.map((weight) => Card(
-              elevation: 16,
-              child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
-                      "Weight ${weight.weight} recorded at ${weight.date}"))))
-        ],
+      List<Weight> weightList = state.weightList;
+
+      return CarouselSlider(
+        options: CarouselOptions(
+          height: 200.0,
+          enlargeCenterPage: true,
+          viewportFraction: 0.6,
+          enableInfiniteScroll: false,
+          reverse: true,
+        ),
+        items: weightList.map((weight) {
+          return Builder(
+            builder: (BuildContext context) {
+              return Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: WeightCard(weight),
+              );
+            },
+          );
+        }).toList(),
       );
+
     });
   }
 }
