@@ -1,9 +1,6 @@
 import 'package:common_presentation/common_presentation.dart';
-import 'package:daily_presentation/daily_presentation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:common_presentation/src/fab_click_listener.dart';
-import '../common/di/di.dart';
+
 import 'screen_builder/home_screen_builder.dart';
 
 class MyHomeScreen extends StatefulWidget {
@@ -20,18 +17,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     homeScreenBuilder.isBigScreen = isBigScreen(context);
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => WeightBloc(MyDI.getWeight()))
-      ],
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(titles[_index]),
-        ),
-        body: _getBody(),
-        bottomNavigationBar: _getNavigationBar(),
-        floatingActionButton: _getFAB(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(titles[_index]),
       ),
+      body: _getBody(),
+      bottomNavigationBar: _getNavigationBar(),
+      floatingActionButton: _getFAB(),
     );
   }
 

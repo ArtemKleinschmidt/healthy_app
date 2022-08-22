@@ -19,6 +19,8 @@ dependencies:
     path: ../common_domain
   common_presentation:
     path: ../common_presentation
+  di:
+    path: ../di
 
 dev_dependencies:
   flutter_test:

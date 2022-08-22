@@ -1,0 +1,17 @@
+name: di
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=2.17.6 <3.0.0'
+
+dependencies:
+  weight_domain:
+    path: ../weight_domain
+  weight_data:
+    path: ../weight_data
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0

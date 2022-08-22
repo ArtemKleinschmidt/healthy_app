@@ -85,6 +85,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  di:
+    dependency: transitive
+    description:
+      path: "app_packages/di"
+      relative: true
+    source: path
+    version: "1.0.0"
   equatable:
     dependency: "direct main"
     description:
