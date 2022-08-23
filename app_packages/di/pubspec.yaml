@@ -11,6 +11,10 @@ dependencies:
     path: ../weight_domain
   weight_data:
     path: ../weight_data
+  profile_domain:
+    path: ../profile_domain
+  profile_data:
+    path: ../profile_data
 
 dev_dependencies:
   lints: ^2.0.0

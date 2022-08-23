@@ -10,7 +10,7 @@ part 'weight_event.dart';
 part 'weight_state.dart';
 
 class WeightBloc extends Bloc<WeightEvent, WeightState> {
-  final GetWeight getWeight;
+  final GetWeightList getWeight;
 
   WeightBloc(this.getWeight) : super(WeightInitial()) {
 

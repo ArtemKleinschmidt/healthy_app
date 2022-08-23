@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weight_domain/weight_domain.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'weight_bloc.dart';
+import 'weight_bloc/weight_bloc.dart';
 
 class DailyScreen extends StatefulWidget implements FabClickListener {
   DailyScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _DailyScreenState extends State<DailyScreen> {
     debugPrint("DailyScreen _dailyScreenContent");
 
     return BlocProvider(
-      create: (context) => WeightBloc(MyDI.getWeight())..add(LoadWeightEvent()),
+      create: (context) => WeightBloc(MyDI.getWeightList())..add(LoadWeightEvent()),
       child: BlocBuilder<WeightBloc, WeightState>(builder: (context, state) {
         debugPrint("DailyScreen state $state");
 

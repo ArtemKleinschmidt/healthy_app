@@ -1,4 +1,4 @@
-name: weight_domain
+name: profile_data
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: none
@@ -7,14 +7,14 @@ environment:
   sdk: '>=2.17.6 <3.0.0'
 
 dependencies:
-  equatable: ^2.0.3
-  intl: ^0.17.0
-
-  common_domain:
-    path: ../common_domain
+  json_annotation: ^4.6.0
   profile_domain:
     path: ../profile_domain
+  common_domain:
+    path: ../common_domain
 
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.16.0
+  build_runner: ^2.2.0
+  json_serializable: ^6.3.1
