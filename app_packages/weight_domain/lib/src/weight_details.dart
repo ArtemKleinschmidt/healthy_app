@@ -21,7 +21,10 @@ class WeightDetails extends Equatable implements Weight {
   double get weight => _weight.weight;
 
   @override
-  List<Object?> get props => [..._weight.props, bodyMassIndex];
+  int get id => _weight.id;
+
+  @override
+  List<Object?> get props => [..._weight.props, bodyMassIndex, bodyType];
 }
 
 enum BodyType {

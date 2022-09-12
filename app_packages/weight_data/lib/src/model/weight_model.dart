@@ -13,10 +13,11 @@ class WeightListModel {
 
 @JsonSerializable()
 class WeightModel {
+  final int id;
   final double weight;
   final DateTime date;
 
-  const WeightModel(this.weight, this.date);
+  const WeightModel(this.id, this.weight, this.date,);
 
   factory WeightModel.fromJson(Map<String, dynamic> json) => _$WeightModelFromJson(json);
   Map<String, dynamic> toJson() => _$WeightModelToJson(this);

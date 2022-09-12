@@ -1,5 +1,5 @@
 import 'package:common_presentation/common_presentation.dart';
-import 'package:daily_presentation/src/daily_screen/WeightDetailsCard.dart';
+import 'package:daily_presentation/src/daily_screen/weight_details_card.dart';
 import 'package:daily_presentation/src/daily_screen/weight_card.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +81,7 @@ class _DailyScreenState extends State<DailyScreen> {
                 );
               }).toList(),
             ),
-            WeightDetailsCard(selectedWeight)
+            WeightDetailsCard(selectedWeight, key: ValueKey(selectedWeight.id),)
           ],
         );
       }),

@@ -7,13 +7,13 @@ import 'package:weight_domain/weight_domain.dart';
 
 class GetWeightDetails implements UseCase<Weight, Future<Result<WeightDetails>>>{
 
-  final IProfileRepository profileRepository;
+  final IProfileRepository _profileRepository;
 
-  GetWeightDetails(this.profileRepository);
+  GetWeightDetails(this._profileRepository);
 
   @override
   Future<Result<WeightDetails>> call(Weight parameter) async {
-    final profileResult = await profileRepository.getProfile();
+    final profileResult = await _profileRepository.getProfile();
 
     if (profileResult is Failure) return Failure((profileResult as Failure).exception);
 
@@ -26,7 +26,7 @@ class GetWeightDetails implements UseCase<Weight, Future<Result<WeightDetails>>>
   }
 
   double getBodyMassIndex(Weight weight, Profile profile) {
-    return weight.weight / pow(profile.height, 2);
+    return weight.weight / pow(profile.height / 100, 2);
   }
 
   BodyType getBodyType(double bodyMassIndex) {
