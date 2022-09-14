@@ -13,6 +13,9 @@ dependencies:
   equatable: ^2.0.3
   flutter_bloc: ^8.0.1
   carousel_slider: ^4.1.1
+  shimmer: ^2.0.0
+
+# internal packages
   weight_domain:
     path: ../weight_domain
   common_domain:
