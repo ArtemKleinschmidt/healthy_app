@@ -4,6 +4,7 @@ import 'package:daily_presentation/src/daily_screen/weight_card.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:weight_domain/weight_domain.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -16,8 +17,8 @@ class DailyScreen extends StatefulWidget implements FabClickListener {
   State<DailyScreen> createState() => _DailyScreenState();
 
   @override
-  void onFabClicked() {
-    debugPrint("Fab clicked");
+  void onFabClicked(BuildContext context) {
+    context.go('/add_weight');
   }
 }
 

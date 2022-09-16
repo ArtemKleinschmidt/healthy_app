@@ -1,27 +1,49 @@
+import 'package:daily_presentation/daily_presentation.dart';
 import 'package:flutter/material.dart';
 
 import 'home/home_screen.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.lightGreen,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: const MyHomeScreen(),
+      routeInformationProvider: _router.routeInformationProvider,
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
     );
   }
+
+  final GoRouter _router = GoRouter(
+    routes: <GoRoute>[
+      GoRoute(
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const MyHomeScreen();
+        },
+        routes: [
+          GoRoute(
+            path: 'add_weight',
+            builder: (BuildContext context, GoRouterState state) {
+              return AddWeightScreen();
+            },
+          ),
+        ]
+      ),
+
+    ],
+  );
 }
-
-

@@ -48,16 +48,17 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget _getFAB() {
     if (_index == 0) {
       return FloatingActionButton(
-          child: Icon(Icons.add), onPressed: _onFabPressed);
+          onPressed: () => _onFabPressed(context),
+          child: const Icon(Icons.add));
     } else {
       return Container();
     }
   }
 
-  _onFabPressed() {
+  _onFabPressed(BuildContext context) {
     final currentScreen = homeWidgets[_index];
     if (currentScreen is FabClickListener) {
-      (currentScreen as FabClickListener).onFabClicked();
+      (currentScreen as FabClickListener).onFabClicked(context);
     }
   }
 }
