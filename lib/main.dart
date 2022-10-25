@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'add_weight',
             builder: (BuildContext context, GoRouterState state) {
-              return AddWeightScreen();
+              return const AddWeightScreen();
             },
           ),
         ]

@@ -5,16 +5,59 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:weight_domain/weight_domain.dart';
 
-class WeightDetailsCard extends StatelessWidget {
+class WeightDetailsCard extends StatefulWidget {
   final Weight _weight;
 
   const WeightDetailsCard(this._weight, {super.key});
 
   @override
+  State<WeightDetailsCard> createState() => _WeightDetailsCardState();
+}
+
+class _WeightDetailsCardState extends State<WeightDetailsCard> {
+
+
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint("initState");
+  }
+
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    debugPrint("didChangeDependencies");
+  }
+
+
+  @override
+  void didUpdateWidget(WeightDetailsCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    debugPrint("didUpdateWidget");
+  }
+
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    debugPrint("deactivate");
+  }
+
+
+  @override
+  void dispose() {
+    super.dispose();
+    debugPrint("dispose");
+  }
+
+  @override
   Widget build(BuildContext context) {
+    debugPrint("build");
     return BlocProvider(
       create: (context) => WeightDetailsBloc(MyDI.getWeightDetails())
-        ..add(LoadWeightDetailsEvent(_weight)),
+        ..add(LoadWeightDetailsEvent(widget._weight)),
       child: BlocBuilder<WeightDetailsBloc, WeightDetailsState>(
         builder: (context, state) {
           if (state is! WeightDetailsSuccess) {

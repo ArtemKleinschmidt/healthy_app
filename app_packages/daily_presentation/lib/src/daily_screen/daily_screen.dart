@@ -11,7 +11,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'weight_bloc/weight_bloc.dart';
 
 class DailyScreen extends StatefulWidget implements FabClickListener {
-  DailyScreen({Key? key}) : super(key: key);
+  const DailyScreen({Key? key}) : super(key: key);
 
   @override
   State<DailyScreen> createState() => _DailyScreenState();

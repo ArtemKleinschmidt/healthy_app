@@ -16,10 +16,10 @@ const icons = <IconData>[
 ];
 
 final homeWidgets = [
-  DailyScreen(),
-  ChartsScreen(),
-  InfoScreen(),
-  MoreScreen(),
+  const DailyScreen(),
+  const ChartsScreen(),
+  const InfoScreen(),
+  const MoreScreen(),
 ];
 
 class HomeScreenBuilder {

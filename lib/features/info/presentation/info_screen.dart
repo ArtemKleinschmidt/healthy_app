@@ -5,10 +5,8 @@ class InfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Info screen"),
-      ),
+    return const Center(
+      child: Text("Info screen"),
     );
   }
 }
