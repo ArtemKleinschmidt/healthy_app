@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+
+import 'add_weight_bloc/add_weight_bloc.dart';
 
 class AddWeightScreen extends StatefulWidget {
   const AddWeightScreen({Key? key}) : super(key: key);
@@ -16,77 +19,92 @@ class AddWeightScreen extends StatefulWidget {
 class _AddWeightScreenState extends State<AddWeightScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   DateTime? chosenDate;
+  late double chosenWeight;
 
   @override
   Widget build(BuildContext context) {
     debugPrint("build");
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Add weight",
-        ),
-        leading: GestureDetector(
-            child: const Icon(Icons.navigate_before),
-            onTap: () => context.pop()),
-        actions: [
-          TextButton(
-            onPressed: () {
-              _formKey.currentState!.validate();
-            },
-            child: Text("SAVE", style: Theme
-                .of(context)
-                .textTheme
-                .button),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
-        child: Card(
-          color: Platform.isIOS ? Colors.white : Theme
-              .of(context)
-              .cardColor,
-          surfaceTintColor: Colors.transparent,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Form(
-                key: _formKey,
-                child: Column(
+    return BlocProvider(
+      create: (context) => AddWeightBloc(),
+      child: BlocBuilder<AddWeightBloc, AddWeightState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text(
+                "Add weight",
+              ),
+              leading: GestureDetector(
+                  child: const Icon(Icons.navigate_before),
+                  onTap: () => context.pop()),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    final valid = _formKey.currentState!.validate();
+                    if (valid) {
+                      final bloc = context.read<AddWeightBloc>();
+                      bloc.add(SaveWeightEvent(chosenDate!, chosenWeight));
+                    }
+                  },
+                  child: Text("SAVE", style: Theme
+                      .of(context)
+                      .textTheme
+                      .button),
+                ),
+              ],
+            ),
+            body: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
+              child: Card(
+                color: Platform.isIOS ? Colors.white : Theme
+                    .of(context)
+                    .cardColor,
+                surfaceTintColor: Colors.transparent,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      DateFormat("MMM dd").format(chosenDate ?? DateTime.now()),
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .headline1,
-                    ),
-                    const SizedBox(height: 32),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
+                    Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            DateFormat("MMM dd").format(
+                                chosenDate ?? DateTime.now()),
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .headline1,
+                          ),
+                          const SizedBox(height: 32),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                              foregroundColor: Colors.white,
+                            ),
+                            onPressed: () async {
+                              await selectDate(context);
+                            },
+                            child: const Text("Select date"),
+                          ),
+                          const SizedBox(height: 32),
+                          SizedBox(
+                              height: 64, width: 300, child: getTextInput()),
+                        ],
                       ),
-                      onPressed: () async {
-                        await selectDate(context);
-                      },
-                      child: const Text("Select date"),
-                    ),
-                    const SizedBox(height: 32),
-                    SizedBox(height: 64, width: 300, child: getTextInput()),
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
-        ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
 
   Widget getTextInput() {
-    final weightFilter = FilteringTextInputFormatter.allow(RegExp(r'[0-9]|\.|,'));
+    final weightFilter = FilteringTextInputFormatter.allow(
+        RegExp(r'[0-9]|\.|,'));
 
     if (Platform.isIOS) {
       return CupertinoTextFormFieldRow(
@@ -94,6 +112,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
         keyboardType: TextInputType.number,
         inputFormatters: [weightFilter],
         validator: weightValidator,
+        onFieldSubmitted: onWeightSubmitted,
       );
     } else {
       return TextFormField(
@@ -101,6 +120,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
         keyboardType: TextInputType.number,
         inputFormatters: [weightFilter],
         validator: weightValidator,
+        onFieldSubmitted: onWeightSubmitted,
       );
     }
   }
@@ -110,7 +130,6 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
       return 'Please enter your weight';
     }
     try {
-
       final number = double.parse((value as String).replaceFirst(',', '.'));
       if (number > 200) {
         return 'Please enter a number up to 200';
@@ -122,6 +141,12 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
     return null;
   }
 
+  onWeightSubmitted(String value) {
+    setState(() {
+      chosenWeight = double.parse(value);
+    });
+  }
+
   Future<void> selectDate(BuildContext context) async {
     final dateTime = await showDatePicker(
         context: context,
@@ -129,8 +154,10 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
         firstDate: DateTime.fromMicrosecondsSinceEpoch(0),
         lastDate: DateTime.now().add(const Duration(days: 365)));
 
-    setState(() {
-      chosenDate = dateTime;
-    });
+    if (dateTime != null) {
+      setState(() {
+        chosenDate = dateTime;
+      });
+    }
   }
 }
