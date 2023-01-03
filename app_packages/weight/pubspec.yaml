@@ -1,17 +1,20 @@
-name: weight_data
+name: weight
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: '>=2.17.6 <3.0.0'
+  sdk: '>=2.18.6 <3.0.0'
 
 dependencies:
-  weight_domain:
-    path: '../weight_domain'
-  common_domain:
-    path: '../common_domain'
   json_annotation: ^4.6.0
+  equatable: ^2.0.3
+  intl: ^0.17.0
+
+  common_domain:
+    path: ../common_domain
+  profile:
+    path: ../profile
 
 dev_dependencies:
   lints: ^2.0.0

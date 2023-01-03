@@ -1,8 +1,9 @@
 
 import 'package:common_domain/common_domain.dart';
-import 'package:weight_data/src/repository/weight_mapper.dart';
-import 'package:weight_domain/weight_domain.dart';
+import 'package:weight/src/data/repository/weight_mapper.dart';
 
+import '../../domain/weight.dart';
+import '../../domain/weight_repository.dart';
 import '../store/weight_data_store.dart';
 
 class WeightRepository implements IWeightRepository {

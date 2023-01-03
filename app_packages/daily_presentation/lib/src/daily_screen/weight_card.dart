@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weight_domain/weight_domain.dart';
+import 'package:weight/weight.dart';
 
 class WeightCard extends StatelessWidget {
   final Weight weight;

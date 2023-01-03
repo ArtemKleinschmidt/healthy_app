@@ -35,10 +35,8 @@ dependencies:
     path: ./app_packages/common_presentation
   common_domain:
     path: ./app_packages/common_domain
-  weight_domain:
-    path: ./app_packages/weight_domain
-  weight_data:
-    path: ./app_packages/weight_data
+  weight:
+    path: ./app_packages/weight
   daily_presentation:
     path: ./app_packages/daily_presentation
 

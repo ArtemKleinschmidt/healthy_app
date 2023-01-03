@@ -4,7 +4,7 @@ import 'package:common_domain/common_domain.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weight_domain/weight_domain.dart';
+import 'package:weight/weight.dart';
 
 part 'weight_event.dart';
 part 'weight_state.dart';

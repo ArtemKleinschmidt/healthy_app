@@ -18,8 +18,8 @@ dependencies:
   intl: ^0.17.0
 
 # internal packages
-  weight_domain:
-    path: ../weight_domain
+  weight:
+    path: ../weight
   common_domain:
     path: ../common_domain
   common_presentation:

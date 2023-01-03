@@ -280,17 +280,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  weight_data:
+  weight:
     dependency: "direct main"
     description:
-      path: "app_packages/weight_data"
-      relative: true
-    source: path
-    version: "1.0.0"
-  weight_domain:
-    dependency: "direct main"
-    description:
-      path: "app_packages/weight_domain"
+      path: "app_packages/weight"
       relative: true
     source: path
     version: "1.0.0"

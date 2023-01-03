@@ -7,10 +7,8 @@ environment:
   sdk: '>=2.17.6 <3.0.0'
 
 dependencies:
-  weight_domain:
-    path: ../weight_domain
-  weight_data:
-    path: ../weight_data
+  weight:
+    path: ../weight
   profile:
     path: ../profile
 

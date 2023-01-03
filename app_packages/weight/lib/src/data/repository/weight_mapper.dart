@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:weight_domain/weight_domain.dart';
+import '../../domain/weight.dart';
 import '../dummy_data/dummy_data.dart';
 import '../model/weight_model.dart';
 

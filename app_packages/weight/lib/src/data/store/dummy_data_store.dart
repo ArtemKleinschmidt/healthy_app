@@ -1,4 +1,5 @@
-import 'package:weight_data/src/store/weight_data_store.dart';
+
+import 'package:weight/src/data/store/weight_data_store.dart';
 
 import '../dummy_data/dummy_data.dart';
 

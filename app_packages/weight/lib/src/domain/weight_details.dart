@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:weight_domain/weight_domain.dart';
+import 'package:weight/src/domain/weight.dart';
 
 class WeightDetails extends Equatable implements Weight {
   final Weight _weight;
