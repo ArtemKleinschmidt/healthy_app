@@ -1,7 +1,9 @@
 import 'package:common_domain/common_domain.dart';
-import 'package:profile_data/src/repository/profile_mapper.dart';
-import 'package:profile_data/src/store/profile_data_store.dart';
-import 'package:profile_domain/profile_domain.dart';
+import 'package:profile/src/data/repository/profile_mapper.dart';
+
+import '../../domain/profile.dart';
+import '../../domain/profile_repository.dart';
+import '../store/profile_data_store.dart';
 
 class ProfileRepository implements IProfileRepository {
 

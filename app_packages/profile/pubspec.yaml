@@ -1,15 +1,13 @@
-name: profile_data
+name: profile
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: '>=2.17.6 <3.0.0'
+  sdk: '>=2.18.6 <3.0.0'
 
 dependencies:
   json_annotation: ^4.6.0
-  profile_domain:
-    path: ../profile_domain
   common_domain:
     path: ../common_domain
 

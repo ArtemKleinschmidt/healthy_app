@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:common_domain/common_domain.dart';
-import 'package:profile_domain/profile_domain.dart';
+import 'package:profile/profile.dart';
 import 'package:weight_domain/weight_domain.dart';
 
 class GetWeightDetails implements UseCase<Weight, Future<Result<WeightDetails>>>{
