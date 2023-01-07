@@ -3,9 +3,9 @@ import 'package:daily_presentation/src/daily_screen/weight_details_card.dart';
 import 'package:daily_presentation/src/daily_screen/weight_card.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:shared_dependencies/bloc.dart';
+import 'package:shared_dependencies/go_router.dart';
+import 'package:shared_dependencies/ui.dart';
 import 'package:weight/weight.dart';
 
 import 'weight_bloc/weight_bloc.dart';

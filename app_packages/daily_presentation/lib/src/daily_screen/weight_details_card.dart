@@ -1,8 +1,8 @@
 import 'package:daily_presentation/src/daily_screen/weight_details_bloc/weight_details_bloc.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:shared_dependencies/bloc.dart';
+import 'package:shared_dependencies/ui.dart';
 import 'package:weight/weight.dart';
 
 class WeightDetailsCard extends StatefulWidget {

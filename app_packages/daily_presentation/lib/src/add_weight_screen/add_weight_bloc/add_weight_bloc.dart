@@ -1,6 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_dependencies/bloc.dart';
+import 'package:shared_dependencies/equatable.dart';
 
 part 'add_weight_event.dart';
 part 'add_weight_state.dart';

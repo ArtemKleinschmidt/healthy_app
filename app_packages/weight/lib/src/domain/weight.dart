@@ -1,5 +1,5 @@
-import 'package:equatable/equatable.dart';
-import 'package:intl/intl.dart';
+import 'package:shared_dependencies/equatable.dart';
+import 'package:shared_dependencies/intl.dart';
 
 class Weight extends Equatable {
   final int id;

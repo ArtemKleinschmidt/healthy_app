@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
+import 'package:shared_dependencies/bloc.dart';
+import 'package:shared_dependencies/go_router.dart';
+import 'package:shared_dependencies/intl.dart';
 
 import 'add_weight_bloc/add_weight_bloc.dart';
 
