@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:common_domain/common_domain.dart';
+import 'package:shared_library/shared_library.dart';
 import 'package:profile/profile.dart';
 
 import '../weight.dart';

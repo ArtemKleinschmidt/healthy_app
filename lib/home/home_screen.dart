@@ -1,4 +1,4 @@
-import 'package:common_presentation/common_presentation.dart';
+import 'package:shared_ui_library/shared_ui_library.dart';
 import 'package:flutter/material.dart';
 
 import 'screen_builder/home_screen_builder.dart';

@@ -1,4 +1,4 @@
-import 'package:daily_presentation/src/daily_screen/weight_details_bloc/weight_details_bloc.dart';
+import 'package:daily_ui/src/daily_screen/weight_details_bloc/weight_details_bloc.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
@@ -16,8 +16,6 @@ class WeightDetailsCard extends StatefulWidget {
 
 class _WeightDetailsCardState extends State<WeightDetailsCard> {
 
-
-
   @override
   void initState() {
     super.initState();
@@ -31,20 +29,17 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
     debugPrint("didChangeDependencies");
   }
 
-
   @override
   void didUpdateWidget(WeightDetailsCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     debugPrint("didUpdateWidget");
   }
 
-
   @override
   void deactivate() {
     super.deactivate();
     debugPrint("deactivate");
   }
-
 
   @override
   void dispose() {

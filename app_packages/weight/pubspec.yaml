@@ -9,8 +9,8 @@ environment:
 dependencies:
   shared_dependencies:
     path: ../shared_dependencies
-  common_domain:
-    path: ../common_domain
+  shared_library:
+    path: ../shared_library
   profile:
     path: ../profile
 

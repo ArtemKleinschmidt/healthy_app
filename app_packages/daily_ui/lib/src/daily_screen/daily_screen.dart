@@ -1,6 +1,6 @@
-import 'package:common_presentation/common_presentation.dart';
-import 'package:daily_presentation/src/daily_screen/weight_details_card.dart';
-import 'package:daily_presentation/src/daily_screen/weight_card.dart';
+import 'package:shared_ui_library/shared_ui_library.dart';
+import 'package:daily_ui/src/daily_screen/weight_details_card.dart';
+import 'package:daily_ui/src/daily_screen/weight_card.dart';
 import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';

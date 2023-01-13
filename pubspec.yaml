@@ -31,14 +31,14 @@ dependencies:
     sdk: flutter
 
 # Internal app packages
-  common_presentation:
-    path: ./app_packages/common_presentation
-  common_domain:
-    path: ./app_packages/common_domain
+  shared_ui_library:
+    path: ./app_packages/shared_ui_library
+  shared_library:
+    path: ./app_packages/shared_library
   weight:
     path: ./app_packages/weight
-  daily_presentation:
-    path: ./app_packages/daily_presentation
+  daily_ui:
+    path: ./app_packages/daily_ui
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

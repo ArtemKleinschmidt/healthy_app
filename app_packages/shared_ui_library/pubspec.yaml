@@ -1,4 +1,4 @@
-name: daily_presentation
+name: shared_ui_library
 description: A new Flutter package project.
 version: 0.0.1
 publish_to: none
@@ -8,26 +8,15 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-
-# internal packages
   shared_dependencies:
     path: ../shared_dependencies
-  weight:
-    path: ../weight
-  common_domain:
-    path: ../common_domain
-  common_presentation:
-    path: ../common_presentation
-  di:
-    path: ../di
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

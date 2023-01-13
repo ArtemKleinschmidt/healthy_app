@@ -1,4 +1,4 @@
-import 'package:daily_presentation/daily_presentation.dart';
+import 'package:daily_ui/daily_ui.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/charts/presentation/charts_screen.dart';
