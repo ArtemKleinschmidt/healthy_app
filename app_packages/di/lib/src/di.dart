@@ -1,5 +1,6 @@
-import 'package:profile/profile.dart' as profile;
-import 'package:weight/weight.dart';
+import 'package:profile/profile_data.dart' as profile;
+import 'package:weight/weight_data.dart';
+import 'package:weight/weight_domain.dart';
 
 class MyDI {
   static GetWeightList getWeightList() {

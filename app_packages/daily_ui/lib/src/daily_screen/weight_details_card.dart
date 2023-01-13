@@ -3,7 +3,7 @@ import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
 import 'package:shared_dependencies/ui.dart';
-import 'package:weight/weight.dart';
+import 'package:weight/weight_domain.dart';
 
 class WeightDetailsCard extends StatefulWidget {
   final Weight _weight;

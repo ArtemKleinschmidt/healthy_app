@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
 import 'package:shared_dependencies/go_router.dart';
 import 'package:shared_dependencies/ui.dart';
-import 'package:weight/weight.dart';
+import 'package:weight/weight_domain.dart';
 
 import 'weight_bloc/weight_bloc.dart';
 

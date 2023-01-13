@@ -2,7 +2,7 @@ import 'package:shared_library/shared_library.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
 import 'package:shared_dependencies/equatable.dart';
-import 'package:weight/weight.dart';
+import 'package:weight/weight_domain.dart';
 
 part 'weight_details_event.dart';
 part 'weight_details_state.dart';
