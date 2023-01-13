@@ -1,16 +1,35 @@
-# healthy_app
+## Healthy app
 
-A new Flutter project.
+A simple Flutter project to learn Flutter libs, architecture, and best practices.
 
-## Getting Started
+Track your weight, and get good health recommendations.
 
-This project is a starting point for a Flutter application.
+WORK IN PROGRESS
 
-A few resources to get you started if this is your first Flutter project:
+## Roadmap: 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [x] Clean architecture 
+- [x] Integrate BLOC 
+- [x] Multi-module architecture 
+- [x] Landscape support for the navigation bar 
+- [x] Navigation (Go Router) 
+- [x] JSON deserialization 
+- [ ] Landscape support for screens 
+- [ ] Dependency injection 
+- [ ] Database 
+- [ ] Ukrainian localization 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 3rd party dependencies 
+
+* [json_serializable](https://pub.dev/packages/json_serializable)
+* [json_annotation](https://pub.dev/packages/json_annotation)
+* [equatable](https://pub.dev/packages/equatable)
+* [flutter_bloc](https://pub.dev/packages/flutter_bloc)
+* [go_router](https://pub.dev/packages/go_router)
+* [carousel_slider](https://pub.dev/packages/carousel_slider)
+* [shimmer](https://pub.dev/packages/shimmer)
+* [intl](https://pub.dev/packages/intl)
+
+## Demo
+
+[device-2023-01-13-212701.webm](https://user-images.githubusercontent.com/32295746/212402539-6430f80b-ca2d-4e75-a13e-f32e80e45de1.webm)
