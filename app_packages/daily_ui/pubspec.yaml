@@ -20,8 +20,6 @@ dependencies:
     path: ../shared_library
   shared_ui_library:
     path: ../shared_ui_library
-  di:
-    path: ../di
 
 dev_dependencies:
   flutter_test:

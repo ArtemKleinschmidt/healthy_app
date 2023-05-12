@@ -42,6 +42,8 @@ dependencies:
     path: ./app_packages/weight
   daily_ui:
     path: ./app_packages/daily_ui
+  profile:
+    path: ./app_packages/profile
 
 dev_dependencies:
   flutter_test:

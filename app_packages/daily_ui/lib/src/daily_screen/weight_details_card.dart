@@ -1,7 +1,7 @@
 import 'package:daily_ui/src/daily_screen/weight_details_bloc/weight_details_bloc.dart';
-import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
+import 'package:shared_dependencies/get_it.dart';
 import 'package:shared_dependencies/ui.dart';
 import 'package:weight/weight_domain.dart';
 
@@ -15,13 +15,11 @@ class WeightDetailsCard extends StatefulWidget {
 }
 
 class _WeightDetailsCardState extends State<WeightDetailsCard> {
-
   @override
   void initState() {
     super.initState();
     debugPrint("initState");
   }
-
 
   @override
   void didChangeDependencies() {
@@ -51,8 +49,9 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
   Widget build(BuildContext context) {
     debugPrint("build");
     return BlocProvider(
-      create: (context) => WeightDetailsBloc(MyDI.getWeightDetails())
-        ..add(LoadWeightDetailsEvent(widget._weight)),
+      create: (context) =>
+          WeightDetailsBloc(GetIt.instance.get<GetWeightDetails>())
+            ..add(LoadWeightDetailsEvent(widget._weight)),
       child: BlocBuilder<WeightDetailsBloc, WeightDetailsState>(
         builder: (context, state) {
           if (state is! WeightDetailsSuccess) {
@@ -86,7 +85,11 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
                     const SizedBox(
                       height: 8,
                     ),
-                    textOrShimmer(weightDetails, weightDetails?.bodyMassIndex.toStringAsFixed(2), 40, context),
+                    textOrShimmer(
+                        weightDetails,
+                        weightDetails?.bodyMassIndex.toStringAsFixed(2),
+                        40,
+                        context),
                     const SizedBox(
                       height: 52,
                     ),
@@ -97,7 +100,11 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
                     const SizedBox(
                       height: 8,
                     ),
-                    textOrShimmer(weightDetails, weightDetails?.bodyType.name.toUpperCase(), 120 ,context),
+                    textOrShimmer(
+                        weightDetails,
+                        weightDetails?.bodyType.name.toUpperCase(),
+                        120,
+                        context),
                   ],
                 ),
               ],
@@ -106,24 +113,29 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
         ),
       );
 
-  Widget textOrShimmer(WeightDetails? weightDetails, String? text, double width, BuildContext context) {
+  Widget textOrShimmer(WeightDetails? weightDetails, String? text, double width,
+      BuildContext context) {
     final Widget textOrShimmer;
     if (weightDetails == null) {
       textOrShimmer = Shimmer(
-                          gradient: LinearGradient(
-                              colors: [Colors.lightGreen.shade300, Colors.white]),
-                          child: Container(
-                            height: 14,
-                            width: width,
-                            color: Colors.green,
-                          ),
-                        );
+        gradient:
+            LinearGradient(colors: [Colors.lightGreen.shade300, Colors.white]),
+        child: Container(
+          height: 14,
+          width: width,
+          color: Colors.green,
+        ),
+      );
     } else {
       textOrShimmer = Text(
-                          text ?? "",
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        );
+        text ?? "",
+        style: Theme.of(context).textTheme.bodyLarge,
+      );
     }
-    return Container(height: 24, alignment: Alignment.center, child: textOrShimmer,);
+    return Container(
+      height: 24,
+      alignment: Alignment.center,
+      child: textOrShimmer,
+    );
   }
 }

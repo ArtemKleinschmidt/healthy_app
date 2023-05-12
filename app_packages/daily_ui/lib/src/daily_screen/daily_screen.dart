@@ -1,10 +1,10 @@
 import 'package:shared_ui_library/shared_ui_library.dart';
 import 'package:daily_ui/src/daily_screen/weight_details_card.dart';
 import 'package:daily_ui/src/daily_screen/weight_card.dart';
-import 'package:di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_dependencies/bloc.dart';
 import 'package:shared_dependencies/go_router.dart';
+import 'package:shared_dependencies/get_it.dart';
 import 'package:shared_dependencies/ui.dart';
 import 'package:weight/weight_domain.dart';
 
@@ -34,7 +34,8 @@ class _DailyScreenState extends State<DailyScreen> {
     debugPrint("DailyScreen _dailyScreenContent");
 
     return BlocProvider(
-      create: (context) => WeightBloc(MyDI.getWeightList())..add(LoadWeightEvent()),
+      create: (context) => WeightBloc(GetIt.instance.get<GetWeightList>())
+        ..add(LoadWeightEvent()),
       child: BlocBuilder<WeightBloc, WeightState>(builder: (context, state) {
         debugPrint("DailyScreen state $state");
 
@@ -82,7 +83,10 @@ class _DailyScreenState extends State<DailyScreen> {
                 );
               }).toList(),
             ),
-            WeightDetailsCard(selectedWeight, key: ValueKey(selectedWeight.id),)
+            WeightDetailsCard(
+              selectedWeight,
+              key: ValueKey(selectedWeight.id),
+            )
           ],
         );
       }),

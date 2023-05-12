@@ -1,10 +1,13 @@
 import 'package:daily_ui/daily_ui.dart';
 import 'package:flutter/material.dart';
-
-import 'home/home_screen.dart';
 import 'package:shared_dependencies/go_router.dart';
 
+import 'di.dart';
+import 'home/home_screen.dart';
+
 void main() {
+  registerDependencies();
+
   runApp(MyApp());
 }
 
