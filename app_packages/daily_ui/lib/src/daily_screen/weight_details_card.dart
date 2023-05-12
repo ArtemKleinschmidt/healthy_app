@@ -81,7 +81,7 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
                   children: [
                     Text(
                       "Body Mass Index",
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(
                       height: 8,
@@ -92,7 +92,7 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
                     ),
                     Text(
                       "Body composition",
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(
                       height: 8,
@@ -121,7 +121,7 @@ class _WeightDetailsCardState extends State<WeightDetailsCard> {
     } else {
       textOrShimmer = Text(
                           text ?? "",
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         );
     }
     return Container(height: 24, alignment: Alignment.center, child: textOrShimmer,);

@@ -2,7 +2,7 @@ import 'package:daily_ui/daily_ui.dart';
 import 'package:flutter/material.dart';
 
 import 'home/home_screen.dart';
-import 'package:go_router/go_router.dart';
+import 'package:shared_dependencies/go_router.dart';
 
 void main() {
   runApp(MyApp());

@@ -21,7 +21,7 @@ class WeightCard extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text(
                     weight.formattedDate("yyyy MMM dd"),
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 const SizedBox(height: 8,),
@@ -37,7 +37,7 @@ class WeightCard extends StatelessWidget {
                             weight.weight.toString(),
                             style: Theme.of(context)
                                 .textTheme
-                                .headline2!
+                                .displayMedium!
                                 .copyWith(
                                     color: Colors.green,
                                     fontWeight: FontWeight.bold),

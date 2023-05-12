@@ -29,20 +29,12 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
 
   Widget _getBody() {
     return homeScreenBuilder.buildBody(
-        context,
-        _index,
-        (int index) => {
-              setState(() => {_index = index})
-            });
+        context, _index, (int index) => setState(() => _index = index));
   }
 
   Widget? _getNavigationBar() {
     return homeScreenBuilder.buildNavigationBar(
-        context,
-        _index,
-        (int index) => {
-              setState(() => {_index = index})
-            });
+        context, _index, (int index) => setState(() => _index = index));
   }
 
   Widget _getFAB() {

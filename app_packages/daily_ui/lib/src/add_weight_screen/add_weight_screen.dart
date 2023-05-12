@@ -48,7 +48,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
                   child: Text("SAVE", style: Theme
                       .of(context)
                       .textTheme
-                      .button),
+                      .labelLarge),
                 ),
               ],
             ),
@@ -73,7 +73,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
                             style: Theme
                                 .of(context)
                                 .textTheme
-                                .headline1,
+                                .displayLarge,
                           ),
                           const SizedBox(height: 32),
                           ElevatedButton(
