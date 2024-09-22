@@ -6,7 +6,6 @@ import '../../domain/profile_repository.dart';
 import '../store/profile_data_store.dart';
 
 class ProfileRepository implements IProfileRepository {
-
   final ProfileDataStore profileDataStore;
 
   ProfileRepository(this.profileDataStore);
@@ -18,5 +17,4 @@ class ProfileRepository implements IProfileRepository {
       return map(profile);
     });
   }
-
 }

@@ -10,7 +10,7 @@ void registerDependencies() {
   final getWeightList = GetWeightList(WeightRepository(DummyDataStore()));
   getIt.registerSingleton(getWeightList);
 
-  final getWeightDetails = GetWeightDetails(profile.ProfileRepository(profile.DummyDataStore()));
+  final getWeightDetails =
+      GetWeightDetails(profile.ProfileRepository(profile.DummyDataStore()));
   getIt.registerSingleton(getWeightDetails);
-
 }

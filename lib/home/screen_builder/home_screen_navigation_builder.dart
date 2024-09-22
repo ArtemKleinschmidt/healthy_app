@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'home_screen_builder.dart';
 
 abstract class HomeNavigationBuilder {
-  Widget? build(BuildContext context, int index, ValueChanged<int> onDestinationSelected);
+  Widget? build(
+      BuildContext context, int index, ValueChanged<int> onDestinationSelected);
 }
 
 class StandartHomeNavigationBuilder extends HomeNavigationBuilder {
-
   @override
-  Widget? build(BuildContext context, int index, ValueChanged<int> onDestinationSelected) {
+  Widget? build(BuildContext context, int index,
+      ValueChanged<int> onDestinationSelected) {
     return NavigationBar(
       selectedIndex: index,
       onDestinationSelected: onDestinationSelected,
@@ -33,13 +34,12 @@ class StandartHomeNavigationBuilder extends HomeNavigationBuilder {
       ],
     );
   }
-
 }
-class BigScreenHomeNavigationBuilder extends HomeNavigationBuilder {
 
+class BigScreenHomeNavigationBuilder extends HomeNavigationBuilder {
   @override
-  Widget? build(BuildContext context, int index, ValueChanged<int> onDestinationSelected) {
+  Widget? build(BuildContext context, int index,
+      ValueChanged<int> onDestinationSelected) {
     return null;
   }
-
 }

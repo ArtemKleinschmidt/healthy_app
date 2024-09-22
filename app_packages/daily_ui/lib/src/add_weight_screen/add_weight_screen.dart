@@ -10,7 +10,7 @@ import 'package:shared_dependencies/intl.dart';
 import 'add_weight_bloc/add_weight_bloc.dart';
 
 class AddWeightScreen extends StatefulWidget {
-  const AddWeightScreen({Key? key}) : super(key: key);
+  const AddWeightScreen({super.key});
 
   @override
   State<AddWeightScreen> createState() => _AddWeightScreenState();
@@ -18,7 +18,8 @@ class AddWeightScreen extends StatefulWidget {
 
 class _AddWeightScreenState extends State<AddWeightScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  DateTime? chosenDate;
+  final TextEditingController _weightController = TextEditingController();
+  DateTime chosenDate = DateTime.now();
   late double chosenWeight;
 
   @override
@@ -41,23 +42,21 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
                   onPressed: () {
                     final valid = _formKey.currentState!.validate();
                     if (valid) {
+                      onWeightSubmitted(_weightController.text);
                       final bloc = context.read<AddWeightBloc>();
-                      bloc.add(SaveWeightEvent(chosenDate!, chosenWeight));
+                      bloc.add(SaveWeightEvent(chosenDate, chosenWeight));
                     }
                   },
-                  child: Text("SAVE", style: Theme
-                      .of(context)
-                      .textTheme
-                      .labelLarge),
+                  child: Text("SAVE",
+                      style: Theme.of(context).textTheme.labelLarge),
                 ),
               ],
             ),
             body: Padding(
               padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
               child: Card(
-                color: Platform.isIOS ? Colors.white : Theme
-                    .of(context)
-                    .cardColor,
+                color:
+                    Platform.isIOS ? Colors.white : Theme.of(context).cardColor,
                 surfaceTintColor: Colors.transparent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -68,12 +67,8 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            DateFormat("MMM dd").format(
-                                chosenDate ?? DateTime.now()),
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .displayLarge,
+                            DateFormat("MMM dd").format(chosenDate),
+                            style: Theme.of(context).textTheme.displayLarge,
                           ),
                           const SizedBox(height: 32),
                           ElevatedButton(
@@ -103,11 +98,12 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
   }
 
   Widget getTextInput() {
-    final weightFilter = FilteringTextInputFormatter.allow(
-        RegExp(r'[0-9]|\.|,'));
+    final weightFilter =
+        FilteringTextInputFormatter.allow(RegExp(r'[0-9]|\.|,'));
 
     if (Platform.isIOS) {
       return CupertinoTextFormFieldRow(
+        controller: _weightController,
         prefix: const Text("Enter your weight: "),
         keyboardType: TextInputType.number,
         inputFormatters: [weightFilter],
@@ -116,6 +112,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
       );
     } else {
       return TextFormField(
+        controller: _weightController,
         decoration: const InputDecoration(labelText: "Enter your weight"),
         keyboardType: TextInputType.number,
         inputFormatters: [weightFilter],
@@ -150,7 +147,7 @@ class _AddWeightScreenState extends State<AddWeightScreen> {
   Future<void> selectDate(BuildContext context) async {
     final dateTime = await showDatePicker(
         context: context,
-        initialDate: chosenDate ?? DateTime.now(),
+        initialDate: chosenDate,
         firstDate: DateTime.fromMicrosecondsSinceEpoch(0),
         lastDate: DateTime.now().add(const Duration(days: 365)));
 

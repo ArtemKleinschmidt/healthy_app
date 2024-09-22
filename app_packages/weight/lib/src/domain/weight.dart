@@ -6,7 +6,11 @@ class Weight extends Equatable {
   final double weight;
   final DateTime date;
 
-  const Weight(this.id, this.weight, this.date,);
+  const Weight(
+    this.id,
+    this.weight,
+    this.date,
+  );
 
   @override
   List<Object?> get props => [weight, date];
@@ -14,5 +18,4 @@ class Weight extends Equatable {
   String formattedDate(String format) {
     return DateFormat(format).format(date);
   }
-
 }

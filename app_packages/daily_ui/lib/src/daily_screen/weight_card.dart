@@ -24,7 +24,9 @@ class WeightCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 Expanded(
                     child: Container(
                         decoration: BoxDecoration(

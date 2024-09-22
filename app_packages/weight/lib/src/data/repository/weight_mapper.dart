@@ -8,6 +8,7 @@ List<Weight> map(String weight) {
   final weightModelList = WeightListModel.fromJson(jsonDecode(dummyWeightData));
 
   return weightModelList.weightList
-      .map((weightModel) => Weight(weightModel.id, weightModel.weight, weightModel.date))
+      .map((weightModel) =>
+          Weight(weightModel.id, weightModel.weight, weightModel.date))
       .toList();
 }

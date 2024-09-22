@@ -13,11 +13,9 @@ class WeightBloc extends Bloc<WeightEvent, WeightState> {
   final GetWeightList getWeight;
 
   WeightBloc(this.getWeight) : super(WeightInitial()) {
-
     on<LoadWeightEvent>((event, emit) async {
-         await onLoadWeight(emit);
+      await onLoadWeight(emit);
     });
-
   }
 
   Future<void> onLoadWeight(Emitter<WeightState> emit) async {
@@ -35,5 +33,4 @@ class WeightBloc extends Bloc<WeightEvent, WeightState> {
       emit(WeightFailure(failure.exception));
     }
   }
-
 }

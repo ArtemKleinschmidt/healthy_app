@@ -17,5 +17,4 @@ class WeightRepository implements IWeightRepository {
       return map(weight);
     });
   }
-
 }

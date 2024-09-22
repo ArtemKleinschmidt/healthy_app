@@ -11,7 +11,7 @@ import 'package:weight/weight_domain.dart';
 import 'weight_bloc/weight_bloc.dart';
 
 class DailyScreen extends StatefulWidget implements FabClickListener {
-  const DailyScreen({Key? key}) : super(key: key);
+  const DailyScreen({super.key});
 
   @override
   State<DailyScreen> createState() => _DailyScreenState();

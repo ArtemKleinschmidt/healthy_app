@@ -10,10 +10,8 @@ class WeightInitial extends WeightState {
 }
 
 class WeightLoading extends WeightState {
-
   @override
   List<Object?> get props => [];
-
 }
 
 class WeightSuccess extends WeightState {

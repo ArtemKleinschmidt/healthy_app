@@ -8,7 +8,8 @@ class WeightListModel {
 
   WeightListModel(this.weightList);
 
-  factory WeightListModel.fromJson(Map<String, dynamic> json) => _$WeightListModelFromJson(json);
+  factory WeightListModel.fromJson(Map<String, dynamic> json) =>
+      _$WeightListModelFromJson(json);
   Map<String, dynamic> toJson() => _$WeightListModelToJson(this);
 }
 
@@ -18,8 +19,13 @@ class WeightModel {
   final double weight;
   final DateTime date;
 
-  const WeightModel(this.id, this.weight, this.date,);
+  const WeightModel(
+    this.id,
+    this.weight,
+    this.date,
+  );
 
-  factory WeightModel.fromJson(Map<String, dynamic> json) => _$WeightModelFromJson(json);
+  factory WeightModel.fromJson(Map<String, dynamic> json) =>
+      _$WeightModelFromJson(json);
   Map<String, dynamic> toJson() => _$WeightModelToJson(this);
 }

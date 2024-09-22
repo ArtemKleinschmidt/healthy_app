@@ -8,7 +8,6 @@ part 'weight_details_event.dart';
 part 'weight_details_state.dart';
 
 class WeightDetailsBloc extends Bloc<WeightDetailsEvent, WeightDetailsState> {
-
   final GetWeightDetails _getWeightDetails;
 
   WeightDetailsBloc(this._getWeightDetails) : super(WeightDetailsInitial()) {
@@ -30,7 +29,5 @@ class WeightDetailsBloc extends Bloc<WeightDetailsEvent, WeightDetailsState> {
       final failure = weightDetailsResult as Failure;
       emit(WeightDetailsFailure(failure.exception));
     }
-
   }
-
 }

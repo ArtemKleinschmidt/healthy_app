@@ -12,5 +12,4 @@ class SaveWeightEvent extends AddWeightEvent {
 
   @override
   List<Object?> get props => [date, weight];
-
 }

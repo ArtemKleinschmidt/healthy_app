@@ -4,7 +4,6 @@ import '../../domain/profile.dart';
 import '../model/profile_model.dart' hide Gender;
 import '../model/profile_model.dart' as model show Gender;
 
-
 Profile map(String rawProfile) {
   ProfileModel profileModel = ProfileModel.fromJson(jsonDecode(rawProfile));
 

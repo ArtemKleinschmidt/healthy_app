@@ -33,20 +33,18 @@ class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(
     routes: <GoRoute>[
       GoRoute(
-        path: '/',
-        builder: (BuildContext context, GoRouterState state) {
-          return const MyHomeScreen();
-        },
-        routes: [
-          GoRoute(
-            path: 'add_weight',
-            builder: (BuildContext context, GoRouterState state) {
-              return const AddWeightScreen();
-            },
-          ),
-        ]
-      ),
-
+          path: '/',
+          builder: (BuildContext context, GoRouterState state) {
+            return const MyHomeScreen();
+          },
+          routes: [
+            GoRoute(
+              path: 'add_weight',
+              builder: (BuildContext context, GoRouterState state) {
+                return const AddWeightScreen();
+              },
+            ),
+          ]),
     ],
   );
 }

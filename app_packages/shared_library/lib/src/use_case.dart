@@ -1,7 +1,5 @@
-abstract class UseCase<P,R> {
-
+abstract class UseCase<P, R> {
   R call(P parameter);
-
 }
 
-class NoParam{}
+class NoParam {}

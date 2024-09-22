@@ -8,9 +8,11 @@ class ProfileModel {
   final DateTime birthday;
   final Gender gender;
 
-  ProfileModel({required this.height, required this.birthday, required this.gender});
+  ProfileModel(
+      {required this.height, required this.birthday, required this.gender});
 
-  factory ProfileModel.fromJson(Map<String, dynamic> json) => _$ProfileModelFromJson(json);
+  factory ProfileModel.fromJson(Map<String, dynamic> json) =>
+      _$ProfileModelFromJson(json);
   Map<String, dynamic> toJson() => _$ProfileModelToJson(this);
 }
 
